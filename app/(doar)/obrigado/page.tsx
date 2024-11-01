@@ -7,24 +7,28 @@ import Image from "next/image";
 import STR from '@/public/str.png';
 
 export default function ObrigadoPage() {
-    const { selectedInstitution, selectedMarket, selectedValor, resetContext } = useAppContext(); // Acesso ao contexto
+    const { selectedInstitution, selectedMarket, selectedValor, resetContext } = useAppContext();
     const router = useRouter();
-    
-    // Estado para controlar as dimensões da tela
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+    // Inicializando as dimensões da janela como 0
+    const [windowWidth, setWindowWidth] = useState(0);
+    const [windowHeight, setWindowHeight] = useState(0);
 
     const handleBackToHome = () => {
         resetContext(); // Reseta o contexto
         router.replace('/'); // Navega para a tela inicial
     };
 
-    // Atualiza as dimensões quando a janela é redimensionada
+    // Atualiza as dimensões da janela
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
             setWindowHeight(window.innerHeight);
         };
+
+        // Define as dimensões iniciais
+        handleResize(); 
+
         window.addEventListener("resize", handleResize);
         return () => {
             window.removeEventListener("resize", handleResize);
@@ -34,8 +38,8 @@ export default function ObrigadoPage() {
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-[#1B3252] p-5 relative">
             <Confetti 
-                width={windowWidth} // Passa a largura da janela
-                height={windowHeight} // Passa a altura da janela
+                width={windowWidth} 
+                height={windowHeight} 
             />
             <h1 className="text-white bold text-4xl mt-10 text-center">Obrigado(a) por doar!</h1>
             <Image
@@ -48,8 +52,8 @@ export default function ObrigadoPage() {
             <div className="bg-white rounded-lg p-5 mt-4 shadow-md w-full max-w-md">
                 <h2 className="font-semibold text-xl mb-2">Dados da doação</h2>
                 <p>Instituição: {selectedInstitution?.name || 'Não selecionada'}</p>
-                <p>Mercado: {selectedMarket?.name || 'Não selecionado'}</p> {/* Usando 'mercado' conforme solicitado */}
-                <p>Valor: {selectedValor !== null ? `R$ ${selectedValor.toFixed(2)}` : 'Não informado'}</p> {/* Usando selectedValor */}
+                <p>Mercado: {selectedMarket?.name || 'Não selecionado'}</p>
+                <p>Valor: {selectedValor !== null ? `R$ ${selectedValor.toFixed(2)}` : 'Não informado'}</p>
             </div>
             <p className="text-white italic text-center mt-4">Sua doação será encaminhada para a instituição escolhida.</p>
             <button 
