@@ -27,15 +27,13 @@ export default function HomePage() {
             <h1 className="text-white text-4xl font-bold ml-4">Fome Zero</h1>
           </div>
           <h2 className="text-[#DFA436] bold text-3xl text-center">
-            "Fazer o bem, olhando a quem!"
+            &quot;Fazer o bem, olhando a quem!&quot;
           </h2>
 
           <div className="w-96 mt-32 z-20 flex flex-col items-center justify-center space-y-5">
             <div className="w-full">
               <Link className="bg-white w-full space-x-2 py-2 px-4 rounded-lg justify-center flex items-center shadow-lg" href="/instituicao">
-                <HandHeart
-                  className="text-[#DFA436]"
-                  size={36} />
+                <HandHeart className="text-[#DFA436]" size={36} />
                 <p className="text-[#1B3252] text-xl md:text-2xl lg:text-3xl font-semibold transition-colors">
                   Quero Doar
                 </p>
@@ -44,9 +42,7 @@ export default function HomePage() {
 
             <div className="z-20 my-3">
               <div className="space-x-2 py-2 px-4 rounded-lg flex items-center shadow-lg">
-                <Store
-                  className="text-[#DFA436]"
-                  size={36} />
+                <Store className="text-[#DFA436]" size={36} />
                 <p className="text-white text-xl md:text-2xl lg:text-3xl font-semibold transition-colors">
                   Conheça nossos parceiros
                 </p>
@@ -64,12 +60,9 @@ export default function HomePage() {
             </div>
           </div>
 
-
           <div className="z-20 my-5">
             <div className="space-x-2 py-2 px-4 rounded-lg flex items-center shadow-lg">
-              <HeartHandshake
-                className="text-[#DFA436]"
-                size={36} />
+              <HeartHandshake className="text-[#DFA436]" size={36} />
               <p className="text-white text-xl md:text-2xl lg:text-3xl font-semibold transition-colors">
                 Conheça nossos parceiros
               </p>

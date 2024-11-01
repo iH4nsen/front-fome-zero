@@ -1,7 +1,6 @@
 "use client";
 import HeaderDoar from "@/components/header";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { useAppContext } from "@/context/appContext";
 

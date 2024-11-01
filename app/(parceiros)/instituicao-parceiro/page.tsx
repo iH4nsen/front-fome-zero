@@ -1,10 +1,8 @@
 "use client";
 import HeaderParceiro from "@/components/headerParceiro";
-import { Progress } from "@/components/ui/progress";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Instituicao } from "@/types";
 
@@ -37,7 +35,6 @@ const institutions = [
 
 export default function InstituicaoParceiraPage() {
     const [selectedInstitution, setSelectedInstitution] = useState<Instituicao | null>(null);
-    const router = useRouter();
 
     return (
         <div className="relative">
@@ -49,6 +46,7 @@ export default function InstituicaoParceiraPage() {
                             key={index}
                             className={`flex flex-row items-center border cursor-pointer rounded-lg shadow-md transition-transform transform ${selectedInstitution && selectedInstitution.name === institution.name ? 'border-2 border-[#1B3252]' : 'border-transparent'
                                 }`}
+                            onClick={() => setSelectedInstitution(institution)} // Utilize setSelectedInstitution para definir a instituição selecionada
                         >
                             <div className="relative w-52 h-40 rounded-l-lg overflow-hidden">
                                 <Image
@@ -72,7 +70,6 @@ export default function InstituicaoParceiraPage() {
                         </div>
                     ))}
                 </div>
-
             </ScrollArea>
         </div>
     );

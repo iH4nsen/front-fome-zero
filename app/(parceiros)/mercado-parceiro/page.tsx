@@ -1,12 +1,7 @@
 "use client";
 import HeaderParceiro from "@/components/headerParceiro";
-import { Progress } from "@/components/ui/progress";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { Market } from "@/types";
 
 const mercado = [
     {
@@ -28,8 +23,6 @@ const mercado = [
 ];
 
 export default function MercadoParceiroPage() {
-    const router = useRouter();
-
     return (
         <div className="relative">
             <HeaderParceiro title="Supermercados" />
@@ -38,7 +31,7 @@ export default function MercadoParceiroPage() {
                     {mercado.map((mercado, index) => (
                         <div
                             key={index}
-                            className="flex flex-col items-center" // Adicionado para centralizar o conteúdo do card
+                            className="flex flex-col items-center"
                         >
                             <Image
                                 src={mercado.image.uri}
