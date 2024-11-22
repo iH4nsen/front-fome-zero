@@ -20,6 +20,7 @@ const mercado = [
         name: "Moderno",
         image: { uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR69EYXVQmIRzWgnG8k0nPmLjlkQ6MVM6_Wng&s' },
     },
+    
 ];
 
 export default function MercadoParceiroPage() {
